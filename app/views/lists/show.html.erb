@@ -11,7 +11,7 @@
     <p><%= movie.rating %></p>
     <p><%= movie.overview %></p>
     <p><%= movie.bookmarks.find_by(list: @list).comment %></p>
-    <%= link_to "delete bookmark", bookmark_path(movie.bookmarks.find { |b| b.list == @list}),
+    <%= link_to "delete bookmark", bookmark_path(movie.bookmarks.find_by(list: @list)),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
   <% end %>
