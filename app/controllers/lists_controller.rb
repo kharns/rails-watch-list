@@ -5,7 +5,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @movies = Movie.all.select { |m| @list.movies.include?(m)}
+    @movies = Movie.all.select { |m| @list.movies.include?(m) }
   end
 
   def new

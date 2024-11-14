@@ -1,7 +1,20 @@
+<div class="list-head">
 <h1><%= @list.name %></h1>
+</div>
 
-<% @movies.each do |movie| %>
-<p><%= movie.title %></p>
-<% end %>
+<%= link_to "Add a movie to this list", new_list_bookmark_path(@list), class: "btn btn-secondary" %>
+<div class="movie-list">
+  <% @movies.each do |movie| %>
+  <div class="movie-card">
+    <%= image_tag movie.poster_url, alt: "#{movie.title} poster", width: 200 %>
+    <h4><%= movie.title %></h4>
+    <p><%= movie.rating %></p>
+    <p><%= movie.overview %></p>
+    <p><%= movie.bookmarks.find_by(list: @list).comment %></p>
+    <%= link_to "delete bookmark", bookmark_path(movie.bookmarks.find { |b| b.list == @list}),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+  <% end %>
+</div>
 
 <%= link_to "Back to my lists", lists_path, class: "btn btn-primary" %>

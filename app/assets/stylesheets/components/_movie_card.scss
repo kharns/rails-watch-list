@@ -1,0 +1,14 @@
+.movie-list {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  padding-block: 30px;
+  padding-inline: 100px
+}
+
+.movie-card {
+  background-color: lightcyan;
+  box-shadow: 1px 1px 1px grey;
+
+}

@@ -1,0 +1,11 @@
+<h1>Create new Bookmark</h1>
+
+<h3>List : <%= @list.name %></h3>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :movie, collection: Movie.all %>
+  <%= f.input :comment %>
+  <%= f.submit "Add to list", class: 'btn btn-success' %>
+<% end %>
+
+<%= link_to "Cancel", :back, class: "btn btn-danger"%>
