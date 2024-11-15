@@ -1,12 +1,13 @@
 .list-head {
   height: 300px;
-  background-image: url('https://dreamlandadventuretourism.com/wp-content/uploads/2023/12/img-world-ticket-from-dream.webp');
+  background-image: asset-url('romance.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   h1 {
     text-align: center;
+    justify-content: center;
     object-position: 50% 50%;
     color: white;
     font-weight: 800;
