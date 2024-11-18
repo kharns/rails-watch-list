@@ -8,9 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Movie.destroy_all
-List.destroy_all
 Bookmark.destroy_all
+List.destroy_all
+Movie.destroy_all
 
 10.times do
   Movie.create(title: Faker::Movie.title, overview: Faker::Movie.quote,
